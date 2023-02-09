@@ -1,0 +1,14 @@
+version: 2.
+  jobs:
+    build:
+      docker:
+       - image: node:19
+       steps:
+        - checkout
+          - run: echo ""
+    test:
+        docker:
+          - image: node:19
+        steps:
+          - checkout
+          - run:
