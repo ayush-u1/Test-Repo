@@ -1,14 +1,43 @@
-version: 2.
-  jobs:
-    build:
-      docker:
-       - image: node:19
-       steps:
-        - checkout
-          - run: echo ""
-    test:
-        docker:
-          - image: node:19
-        steps:
-          - checkout
-          - run:
+version: 2
+jobs:
+  build:
+    docker:
+      - image : node:19
+    steps:
+      - checkout
+      - run: echo "Docker image executed"
+  tests:
+    docker :
+      - image : node:19
+    steps:
+      - checkout
+      - run: node --version
+
+workflows:
+  version : 2
+  minimal:
+    jobs:
+      - build
+      - tests
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
